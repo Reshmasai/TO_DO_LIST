@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #4b79b4;">
+  <span ><i class="m-2 bi bi-list-check navbar-brand"></i></span>
+  <div class="container">
+    <select  name="lists" id="lists">
+      <option [routerLink]="['/showTasks','alllists']" value="all lists" selected>All lists</option>
+      <option [routerLink]="['/showTasks','default']" value="default">Default</option>
+      <option [routerLink]="['/showTasks','personal']" value="personal">Personal</option>
+      <option [routerLink]="['/showTasks','work']" value="work">Work</option>
+      <option [routerLink]="['/showTasks','finished']" value="finished">Finished</option>
+      <option (click)="openModal()"  value="add list" id="opt">Add List</option>
+    </select> 
+  </div>
+  <span (click)="search()"><i class="bi bi-search navbar-brand"></i></span>
+  <span (click)="openSidebar()"><i class="bi bi-three-dots-vertical navbar-brand"></i></span>
+</nav>
+
+<div class="myForm" id="inpForm">
+  <div class="align">
+    <p style="color:white;font-style: bold;"><b> New List</b></p>
+    <input type="text" #listName class="listInput" placeholder="Enter List Name"><br>
+    <button class="cancel" (click)="closeModal()">cancel</button>
+    <button class="add" (click)="createList(listName.value)">add</button>
+  </div>
+</div>
+
+<div *ngIf="showSide" id="sideNav" class="sidenav">
+  <p style="color:rgb(53,84,126);font-style: bold;">Pick a theme</p>
+  <div class="adjust" style="background-color: rgb(30, 47, 71);" (click)="frstClr()"></div><div class="adjust" style="background-color: rgb(0, 62, 149);" (click)="scndClr()"></div><div class="adjust" style="background-color: rgb(124, 179, 255);" (click)="thirdClr()"></div><div class="adjust" style="background-color: rgb(0, 0, 0);" (click)="frthClr()"></div><div class="adjust" style="background-color: rgb(246, 246, 246);" (click)="fthClr()"></div>
+</div>
+
+
+

@@ -1,0 +1,35 @@
+<div (mouseover)="showDelete()" (mouseleave)="hideDelete()" class="container">
+   <div  *ngIf="!isAllList">
+      <div class="col-lg-4 offset-lg-3 displayItem" *ngFor="let item of dataList; let i=index;">
+         <span *ngIf="!isFinished"><input type="checkbox" (change)="checkOrUncheck(item,i,0)" class="checkbox "  name="" id="checkbox"></span>
+         <span [ngClass]="{'delete': isHover, 'noDelete':!isHover}" (click)="delete(i,0)"><i class="bi bi-x-lg"></i></span>
+         <span class="innerItem">{{item}}</span><br>
+         <span class="display-date" *ngIf="dateList[i]!=='na'"><b>{{dateList[i]}}</b></span>
+      </div>
+   </div>
+   <div *ngIf="isAllList">
+      <div *ngFor="let list of dataList; let j=index;">
+         <div *ngIf="namesList[j]!=='finished'">
+            <div class="col-lg-4 offset-lg-3 displayItem" *ngFor="let item of list; let k=index;">
+               <span *ngIf="!isFinished"><input (change)="checkOrUncheck(item,k,j)" type="checkbox" class="checkbox"  name="" id=""></span>
+               <span [ngClass]="{'delete': isHover, 'noDelete':!isHover}" (click)="delete(k,j)" class="delete"><i class="bi bi-x-lg"></i></span>
+               <span class="innerItem">{{item}}</span><br>
+               <span class="display-date" *ngIf="dateList[j][k]!=='na'"><b>{{dateList[j][k]}}</b></span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<footer class="footer">
+   <div *ngIf="!isFinished">
+      <div  class="form-group col-lg-4 offset-lg-3">
+         <input type="text" (keyup.enter)="fn()" (keyup.enter)="list.value=''" (keyup)="onKey($event)" onblur="event.target.value=''" #list style="float:left;" class=" addInput" name="task" id="task" placeholder="enter quick task" input>
+         <span *ngIf="show" (click)="fn() " style="margin:-40px; line-height: 2.3em; left: 1em; color: white;"><i class="bi bi-check2"></i></span>
+      </div>
+      <span routerLink="/create" *ngIf="!show" style="color: rgb(249, 245, 245);"><i class="bi bi-plus-circle add "></i></span>
+   </div>
+</footer>
+
+
+

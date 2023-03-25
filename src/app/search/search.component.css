@@ -1,0 +1,39 @@
+.searchInp{
+    border:0;
+    outline:0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    width: 40em;
+    padding: 0;
+    height:1em;
+    margin-top:0
+  }
+  .icon_1{
+    margin-left: 0.4em;
+  }
+  .icon_2{
+    margin-left: 5em;
+  }
+  .searchResults{
+    background-color: #81a1ca;
+    min-height:3.5em;
+    max-height:auto;
+    transition: .5s;
+    width:50%;
+    border-radius: 0.5em;
+    margin-top:1em;
+    word-break:break-all; 
+  }
+  .searchResults:hover{
+    transform:scale(1.06);
+    background: #dc839e;
+  }
+  .innerElement{
+    padding-left: 0.8em;
+    margin-top:0.45em;
+    height:0.1;
+    font-size: 1.4em;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+  }

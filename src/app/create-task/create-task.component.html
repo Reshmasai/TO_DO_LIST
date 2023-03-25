@@ -1,0 +1,9 @@
+<form #myForm="ngForm" class="container col-lg-4 offset-lg-3" action="">
+    <label for="">What is to be done?</label>
+    <input type="text" name="task" ngModel><br><br><br>
+    <label for="">Due data</label>
+    <input type="date" name="date" id="" ngModel><br><br><br>
+    <label for="">Add To list</label>
+    <select  name="list" id="list" ngModel></select>
+  <span class="circle-icon" (click)="onSubmit(myForm)"><i class="bi bi-check-circle-fill"></i></span>
+</form>
